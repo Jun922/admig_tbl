@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>this is a student list page.</h1>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>名前</th>
+                <th>年齢</th>
+                <th>性別</th>
+                <th>仕事</th>
+                <th>備考</th>
+            </tr>
+        </thead>
+        
+        {% for student in object_list %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.get_sex_display }}</td>
+                <td>{{ student.job }}</td>
+                <td>{{ student.memo }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
