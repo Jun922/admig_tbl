@@ -28,6 +28,23 @@ class Student(models.Model):
         verbose_name = "仕事",
         max_length = 15,
     )
+
+    ability = models.IntegerField(
+        verbose_name = '理解力',
+        choices = (
+            (1, '卒業不可'),
+            (2, '及第点'),
+            (3, '普通'),
+            (4, '優秀'),
+            (5, '講師候補'),
+        ),
+        default = 3,
+    )
+
+    graduated = models.BooleanField(
+        verbose_name = "卒業ステータス",
+        default = False,
+    )
     
     memo = models.TextField(
         verbose_name = '備考',
@@ -48,4 +65,59 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Lesson(models.Model):
+    lesson = models.ForeignKey(
+        Student,
+        on_delete = models.CASCADE
+    )
+    
+    times = models.IntegerField(
+        verbose_name = 'レッスン回数',
+    )
+
+    progress = models.IntegerField(
+        verbose_name = '進捗',
+        choices = (
+            (0, '---'),
+            (1, 'progate初級'),
+            (2, 'progate中級'),
+            (3, 'progate上級'),
+            (4, 'progate道場初級'),
+            (5, 'progate道場中級'),
+            (6, 'progate道場上級'),
+            (7, '1 Profile'),
+            (8, '2 PhotoBook'),
+            (9, '3 PhotoBook2'),
+            (10, '4 Recipe前半'),
+            (11, '5 Recipe後半'),
+            (12, '6 WoodenJewelry'),
+            (13, '7 MyWork'),
+            (14, '8 Meg88'),
+            (15, '9 Totally'),
+            (16, '10 WED'),
+            (17, '11 TravelBlog'),
+            (18, '12 創作'),
+            (19, '13 Coffee'),
+            (20, '14 FurnitureDesign'),
+            (21, '15 明るいHouse'),
+            (22, '16 Sneakers'),
+            (23, '17 BBB英会話'),
+            (24, 'WordPress'),
+            (25, 'オリジナルサイト'),
+            (26, '案件獲得'),
+        ),
+        default = 0,
+    )
+    
+    memo = models.TextField(
+        verbose_name = '備考',
+        max_length = 500,
+        blank = True,
+        null = True,
+    )
+
+    def __str__(self):
+        return self.times
     
