@@ -64,11 +64,11 @@ class Student(models.Model):
     )
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class Lesson(models.Model):
-    lesson = models.ForeignKey(
+    name = models.ForeignKey(
         Student,
         on_delete = models.CASCADE
     )
@@ -119,5 +119,5 @@ class Lesson(models.Model):
     )
 
     def __str__(self):
-        return self.times
+        return str(self.name)
     
