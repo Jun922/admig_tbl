@@ -4,13 +4,13 @@ from .models import Student, Lesson
 
 class LessonAdmin(admin.ModelAdmin):
     list_display = (
-        'name',
+        'student',
         'times',
         'progress',
     )
 
     def get_name(self, obj):
-        return obj.name
+        return obj.student
 
 
 admin.site.register(Student)

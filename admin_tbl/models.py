@@ -68,9 +68,10 @@ class Student(models.Model):
 
 
 class Lesson(models.Model):
-    name = models.ForeignKey(
+    student = models.ForeignKey(
         Student,
-        on_delete = models.CASCADE
+        on_delete = models.CASCADE,
+        related_name = 'lesson',
     )
     
     times = models.IntegerField(
@@ -119,5 +120,5 @@ class Lesson(models.Model):
     )
 
     def __str__(self):
-        return str(self.name)
+        return str(self.student)
     
