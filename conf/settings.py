@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'admin_tbl.apps.AdminTblConfig',
+    'apps.admin_tbl.apps.AdminTblConfig',
+    'apps.route_manager.apps.RouteManagerConfig',
 ]
 
 MIDDLEWARE = [

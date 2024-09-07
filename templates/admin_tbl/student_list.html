@@ -3,17 +3,18 @@
 
 {% block content %}
     <section class="students-list container">
-        <ul>
-            <li><a href="{% url 'admin_tbl:student_create' %}">add a student</a></li>
-        </ul>
+        <a href="{% url 'admin_tbl:student_create' %}" class="add-btn">
+            <i class="fa-solid fa-plus"></i>
+            <span>add student</span>
+        </a>
 
 
         <table>
             <thead>
-                <th>名前</th>
-                <th>進捗</th>
-                <th>授業回数</th>
-                <th>備考</th>
+                <th class="name">名前</th>
+                <th class="progress">進捗</th>
+                <th class="times">授業回数</th>
+                <th class="memo">備考</th>
             </thead>
             
             {% for student in students %}

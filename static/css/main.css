@@ -1,15 +1,109 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+    display: flex;
+}
+
 .container {
     max-width: 1000px;
     padding: 0 5%;
 }
 
+
+/* header */
+header {
+    width: 20%;
+    height: calc(100vh - 19.5px);
+    background-color: #333333;
+}
+
+.header-contents {
+    padding: 0 2%;
+}
+
+header a {
+    color: white;
+}
+
+.menu li {
+    margin-bottom: 7px;
+}
+
+
+/* main */
+main {
+    width: 80%;
+    margin-top: 30px;
+}
+
+
 /* students list */
+.add-btn {
+    display: inline-block;
+    border: 1px solid #333333;
+    border-radius: 3%;
+    padding: 10px 15px;
+}
+
+.add-btn:hover,
+.fa-plus:hover {
+    background-color: #333333;
+    color: white;
+}
+
 .students-list table {
     width: 100%;
+    margin-top: 15px;
 }
 
 .students-list th,
-.students-list tr {
+.students-list td {
     text-align: center;
-    border-bottom: 1px solid black;
+}
+
+.students-list th {
+    border-bottom: 1px solid #333333;
+}
+
+.students-list td {
+    border-bottom: 1px dotted #333333;
+    line-height: 50px;
+}
+
+.name,
+.times,
+.progress {
+    width: 20%;
+}
+
+.memo {
+    width: 40%;
+}
+
+/* footer */
+footer {
+    background-color: #333333;
+    text-align: center;
+}
+
+footer p {
+    color: white;
+    font-size: 13px;
+    margin: 0;
 }
