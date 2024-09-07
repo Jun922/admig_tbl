@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+    <article>
+        <h1>{{ student.name }}</h1>
+
+        <a href="{% url 'admin_tbl:student_update' student.pk %}">
+            <i class="fa-solid fa-pen-to-square"></i>
+        </a>
+
+        <form method="post" action="{% url 'admin_tbl:student_delete' student.pk %}">
+            {% csrf_token %}
+            <button class="delete_btn" type="submit" onclick="return confirm('本当に削除しますか？');">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </form>
+    </article>
+    
+    <a href="{% url 'admin_tbl:student_list' %}">return pre-page</a>
+{% endblock %}

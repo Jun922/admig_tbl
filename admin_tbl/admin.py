@@ -4,9 +4,9 @@ from .models import Student, Lesson
 
 class LessonAdmin(admin.ModelAdmin):
     list_display = (
-        'student',
-        'times',
-        'progress',
+        "student",
+        "times",
+        "progress",
     )
 
     def get_name(self, obj):

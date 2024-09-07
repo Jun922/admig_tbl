@@ -1,0 +1,15 @@
+.container {
+    max-width: 1000px;
+    padding: 0 5%;
+}
+
+/* students list */
+.students-list table {
+    width: 100%;
+}
+
+.students-list th,
+.students-list tr {
+    text-align: center;
+    border-bottom: 1px solid black;
+}
