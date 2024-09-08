@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="lesson-list container">
+        <h2>
+            <a href="{% url 'admin_tbl:student_detail' object_list.0.student.pk %}">
+                {{ lessons.0.student.name }}さん
+            </a>
+        </h2>
+
+
+        {% for lesson in lessons %}
+            <div class="lesson">
+                <ul class="lesson-info">
+                    <li>{{ lesson.times }}回目</li>
+                    <li>{{ lesson.get_progress_display }}</li>
+                </ul>
+
+                <div class="lesson-memo">
+                    <h3>レッスンメモ</h3>
+                    <p>{{ lesson.memo }}</p>
+                </div>
+            </div>
+        {% endfor %}
+
+        
+        <a href="{% url 'admin_tbl:student_list' %}">return pre-page</a>
+    </section>
+{% endblock %}

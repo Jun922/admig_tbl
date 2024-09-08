@@ -20,14 +20,16 @@
             {% for student in students %}
                 <tr>
                     <td>
-                        <a href="{% url 'admin_tbl:student_detail' student.pk %}">
+                        <a href="{% url 'admin_tbl:lesson_list' student.pk %}">
                             {{ student.name }}
                         </a>
                     </td>
                     
                     {% for report in student.lesson.all %}
-                    <td>{{ report.get_progress_display }}</td>
-                    <td>{{ report.times }}</td>
+                        {% if forloop.last %}
+                            <td>{{ report.get_progress_display }}</td>
+                            <td>{{ report.times }}</td>
+                        {% endif %}
                     {% endfor %}
                     
                     <td>{{ student.memo }}</td>

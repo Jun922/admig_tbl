@@ -34,13 +34,17 @@ header {
 }
 
 .header-contents {
-    padding: 0 2%;
+    padding: 7% 3%;
 }
 
 header a {
     color: white;
 }
 
+.menu {
+    margin-top: 27px;
+    margin-left: 35px;
+}
 .menu li {
     margin-bottom: 7px;
 }
@@ -53,6 +57,7 @@ main {
 }
 
 
+/* students */
 /* students list */
 .add-btn {
     display: inline-block;
@@ -95,6 +100,51 @@ main {
 .memo {
     width: 40%;
 }
+
+
+/* lessons */
+/* lesson_list */
+.lesson-list h2 {
+    margin-bottom: 35px;
+}
+
+.lesson {
+    border: 1px solid #333333;
+    margin-bottom: 30px;
+    padding: 5px;
+    position: relative;
+}
+
+.lesson::after {
+    position: absolute;
+    content: "";
+    box-shadow: 0px 0px 20px 10px rgba(17, 17, 26, 0.18);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.lesson-info {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.lesson-info li {
+    margin-right: 15px;
+}
+
+.lesson-memo h3 {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.lesson-info li:nth-child(1)::after,
+.lesson-memo h3::after {
+    content: ":";
+    margin-left: 5px;
+}
+
 
 /* footer */
 footer {
