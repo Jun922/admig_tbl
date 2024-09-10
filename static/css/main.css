@@ -16,6 +16,10 @@ li {
     list-style: none;
 }
 
+h2 {
+    margin-bottom: 35px;
+}
+
 .wrapper {
     display: flex;
 }
@@ -102,10 +106,51 @@ main {
 }
 
 
+/* students create/update */
+.student-form {
+    border-bottom: 1px solid #333333;
+    margin-bottom: 25px;
+}
+
+.add-student-form label,
+.add-student-form input {
+    display: block;
+}
+
+.student-sex input {
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.student-sex {
+    border: none;
+}
+
+.student-memo {
+    border: 1px solid #333333;
+}
+
+button {
+    border: 1px solid #333333;
+    border-radius: 3%;
+    background-color: #333333;
+    color: white;
+    padding: 3px 15px;
+}
+
+button:hover {
+    background-color: white;
+    color: #333333;
+}
+
+
+
 /* lessons */
 /* lesson_list */
 .lesson-list h2 {
-    margin-bottom: 35px;
+    letter-spacing: 3px;
+    border-bottom: 2px solid #333333;
+    display: inline-block;
 }
 
 .lesson {

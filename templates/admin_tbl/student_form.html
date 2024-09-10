@@ -2,13 +2,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>投稿・更新ページ</h2>
-    
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">保存</button>
-    </form>
+    <section class="add-student container">
+        <h2>生徒の新規追加</h2>
+        
+        <form action="" method="POST" class="add-student-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">登録</button>
+        </form>
+    </section>
     
     <a href="{% url 'admin_tbl:student_list' %}">return pre-page</a>
 {% endblock %}
