@@ -23,6 +23,7 @@ class StudentListView(ListView):
 class StudentDetail(DetailView):
     template_name = "admin_tbl/student_detail.html"
     model = Student
+    context_object_name = "student"
     
     def get_queryset(self):
         queryset = Student.objects.prefetch_related("lesson")
