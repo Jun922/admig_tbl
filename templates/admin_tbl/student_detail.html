@@ -3,6 +3,8 @@
 
 {% block content %}
     <section class="student-detail container">
+        <!-- <h2>基本情報</h2> -->
+
         <dl>
             <dt class="name">名前</dt>
             <dd>{{ student.name }}</dd>
@@ -26,16 +28,23 @@
             <dd>{{ student.memo }}</dd>
         </dl>
 
-        <a href="{% url 'admin_tbl:student_update' student.pk %}">
-            <i class="fa-solid fa-pen-to-square"></i>
-        </a>
-        
-        <form method="post" action="{% url 'admin_tbl:student_delete' student.pk %}">
-            {% csrf_token %}
-            <button class="delete_btn" type="submit" onclick="return confirm('本当に削除しますか？');">
-                <i class="fa-solid fa-trash"></i>
-            </button>
-        </form>
+        <ul class="edit-del">
+            <li>
+                <a href="{% url 'admin_tbl:student_update' student.pk %}" class="edit-btn">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    edit
+                </a>
+            </li>
+            <li>
+                <form method="post" action="{% url 'admin_tbl:student_delete' student.pk %}">
+                    {% csrf_token %}
+                    <button class="delete-btn" type="submit" onclick="return confirm('本当に削除しますか？');">
+                        <i class="fa-solid fa-trash-can"></i>
+                        delete
+                    </button>
+                </form>
+            </li>
+        </ul>
     </section>
     
     <a href="{% url 'admin_tbl:student_list' %}">return pre-page</a>
